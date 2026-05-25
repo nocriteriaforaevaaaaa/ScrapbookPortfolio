@@ -17,7 +17,7 @@ const projects = [
     desc: 'A complete virtual laboratory where students can run experiments, visualize results, and learn by doing - no physical lab needed. Built to make quality STEM education accessible to every student in Nepal.',
     year: '2026',
     note: 'hackathon winner!',
-    demo: { type: 'video', src: '/demo-labsathi.mp4' },
+    demo: { type: 'video', src: `${import.meta.env.BASE_URL}demo-labsathi.mp4` },
   },
   {
     title: 'Sui Guestbook',
@@ -26,7 +26,7 @@ const projects = [
     desc: 'A decentralized guestbook where messages live on-chain forever. Learned Move from scratch for this one.',
     year: '2025',
     repo: 'https://github.com/nocriteriaforaevaaaaa/Sui-Guestbook',
-    demo: { type: 'video', src: '/demo-sui.mp4' },
+    demo: { type: 'video', src: `${import.meta.env.BASE_URL}demo-sui.mp4` },
   },
   {
     title: 'EduPerks',
@@ -36,7 +36,7 @@ const projects = [
     year: '2025',
     note: 'hackathon winner - fintech',
     repo: 'https://github.com/nocriteriaforaevaaaaa/EduPerks',
-    demo: { type: 'video', src: '/demo-eduperks.mp4' },
+    demo: { type: 'video', src: `${import.meta.env.BASE_URL}demo-eduperks.mp4` },
   },
   {
     title: 'RakshyaKawach',
@@ -46,7 +46,7 @@ const projects = [
     year: '2024',
     note: 'personal favorite',
     repo: 'https://github.com/nocriteriaforaevaaaaa/RakshyaKawach',
-    demo: { type: 'video', src: '/demo-rakshya.mp4' },
+    demo: { type: 'video', src: `${import.meta.env.BASE_URL}demo-rakshya.mp4` },
   },
   {
     title: 'Virtual Drive',
@@ -65,7 +65,7 @@ const projects = [
     year: '2023',
     note: 'my first "real" project',
     repo: 'https://github.com/nocriteriaforaevaaaaa/ratmaze',
-    demo: { type: 'gif', src: '/demo-ratmaze.gif' },
+    demo: { type: 'gif', src: `${import.meta.env.BASE_URL}demo-ratmaze.gif` },
   },
 ]
 
