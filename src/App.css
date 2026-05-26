@@ -1920,6 +1920,433 @@ a.cnt-link { cursor: pointer; }
   }
 }
 
+/* ---- Meet Spring Card ---- */
+.sparkle-section {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px 40px;
+  position: relative;
+}
+
+.sparkle-card {
+  background: white;
+  padding: 28px 40px 24px;
+  text-align: center;
+  position: relative;
+  box-shadow: 3px 5px 18px var(--shadow-md);
+  transform: rotate(-1.5deg);
+  max-width: 300px;
+  width: 100%;
+  transition: all 0.4s ease;
+  overflow: visible;
+}
+
+.sparkle-card:hover {
+  transform: rotate(0deg) translateY(-6px) scale(1.03);
+  box-shadow: 5px 8px 25px var(--shadow-md);
+}
+
+.sparkle-tape {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 80px;
+  height: 22px;
+  background: linear-gradient(135deg, #FFD93D, #FFE88A);
+  opacity: 0.8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  z-index: 5;
+}
+
+.sparkle-pin {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  background: var(--rose);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  z-index: 5;
+}
+
+.sparkle-pin::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+}
+
+.spring-card-icon {
+  margin-bottom: 6px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.spring-dog-svg {
+  filter: drop-shadow(2px 3px 5px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
+}
+
+.sparkle-card:hover .spring-dog-svg {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.sparkle-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.sparkle-count {
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  color: var(--ink-light);
+  line-height: 1.4;
+}
+
+.sparkle-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--rose);
+}
+
+.sparkle-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 20px 20px;
+  border-color: transparent transparent var(--cream) transparent;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.sparkle-card:hover .sparkle-corner {
+  border-width: 0 0 28px 28px;
+  opacity: 0.8;
+}
+
+/* ---- Spring Page Overlay ---- */
+.spring-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--cream);
+  overflow-y: auto;
+  animation: springPageIn 0.4s ease-out;
+}
+
+@keyframes springPageIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spring-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 24px 60px;
+  position: relative;
+}
+
+.spring-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.15rem;
+  color: var(--ink-light);
+  background: white;
+  border: 1.5px dashed var(--kraft);
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.spring-back:hover {
+  background: var(--rose-light);
+  border-color: var(--rose);
+  transform: translateX(-3px);
+}
+
+.spring-page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.spring-header-area {
+  text-align: center;
+}
+
+.spring-page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.spring-page-subtitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: var(--ink-light);
+  margin-bottom: 8px;
+}
+
+.spring-squiggle {
+  opacity: 0.6;
+}
+
+.spring-photo-row {
+  display: flex;
+  justify-content: center;
+}
+
+.spring-polaroid {
+  background: white;
+  position: relative;
+  box-shadow: 4px 6px 20px var(--shadow-md);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: visible;
+}
+
+.spring-pol-1 {
+  padding: 12px 12px 42px 12px;
+  max-width: 380px;
+  width: 100%;
+  transform: rotate(-2deg);
+}
+
+.spring-pol-2 {
+  padding: 12px 12px 42px 12px;
+  max-width: 380px;
+  width: 100%;
+  transform: rotate(1.5deg);
+}
+
+.spring-polaroid:hover {
+  transform: rotate(0deg) scale(1.02) !important;
+  box-shadow: 5px 8px 28px rgba(60,47,47,0.2);
+}
+
+.spring-pol-tape {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 80px;
+  height: 22px;
+  opacity: 0.8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  z-index: 5;
+}
+
+.spring-pol-img {
+  width: 100%;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.spring-pol-img img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.spring-polaroid:hover .spring-pol-img img {
+  transform: scale(1.03);
+}
+
+.spring-pol-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--ink-light);
+}
+
+.spring-desc-card {
+  background: white;
+  padding: 32px 28px;
+  position: relative;
+  box-shadow: 3px 4px 15px var(--shadow);
+  transform: rotate(0.8deg);
+  max-width: 520px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.spring-desc-card:hover {
+  transform: rotate(0deg);
+}
+
+.spring-desc-tape {
+  position: absolute;
+  height: 24px;
+  top: -12px;
+  right: 30px;
+  width: 100px;
+  transform: rotate(3deg);
+  z-index: 5;
+}
+
+.spring-desc-card p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.spring-desc-card p:last-child {
+  margin-bottom: 0;
+}
+
+.spring-since {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem !important;
+  color: var(--rose) !important;
+  transform: rotate(-1deg);
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.spring-pet-area {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.spring-pet-prompt {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: var(--ink-light);
+  margin-bottom: 14px;
+}
+
+.sparkle-btn-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.spring-pet-btn {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--rose-light);
+  border: 2px solid var(--rose);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.spring-pet-btn:hover {
+  background: var(--rose);
+  color: white;
+  transform: translateY(-2px) rotate(-1deg);
+  box-shadow: 4px 4px 0 var(--kraft-dark);
+}
+
+.spring-pet-btn:active {
+  transform: scale(0.95);
+}
+
+.spring-paw-icon {
+  font-size: 1.4rem;
+}
+
+.sparkle-bounce {
+  animation: popBounce 0.5s ease !important;
+}
+
+@keyframes popBounce {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.3) rotate(8deg); }
+  50% { transform: scale(0.85) rotate(-5deg); }
+  75% { transform: scale(1.1) rotate(3deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.sparkle-particle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  z-index: 20;
+  animation: sparkleExplode 0.9s ease-out forwards;
+}
+
+@keyframes sparkleExplode {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  40% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(0.2) rotate(200deg);
+  }
+}
+
+.spring-pet-count {
+  font-family: 'Caveat', cursive;
+  font-size: 1.15rem;
+  color: var(--ink-light);
+}
+
+@media (max-width: 500px) {
+  .sparkle-card {
+    padding: 24px 28px;
+    max-width: 260px;
+  }
+
+  .spring-page-title {
+    font-size: 2.4rem;
+  }
+
+  .spring-pol-1,
+  .spring-pol-2 {
+    max-width: 300px;
+  }
+
+  .spring-desc-card {
+    padding: 24px 20px;
+  }
+
+  .spring-desc-card p {
+    font-size: 1rem;
+  }
+}
+
 /* ---- Footer ---- */
 .scrapbook-footer {
   text-align: center;

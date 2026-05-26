@@ -9,6 +9,7 @@ import Skills from './components/Skills'
 import Education from './components/Education'
 import Interests from './components/Interests'
 import Contact from './components/Contact'
+import SparkleCounter from './components/SparkleCounter'
 import Footer from './components/Footer'
 import Decorations from './components/Decorations'
 import RetroDecorations from './components/RetroDecorations'
@@ -48,6 +49,7 @@ function App() {
       <Education />
       <Interests />
       <Contact />
+      <SparkleCounter />
       <Footer />
     </div>
   )

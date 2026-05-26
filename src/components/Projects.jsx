@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 const cardColors = [
   { border: '#FF6B8A', bg: 'rgba(255,107,138,0.04)', tape: 'linear-gradient(135deg, #FF8FA8, #FFB6C8)' },
@@ -69,6 +69,42 @@ const projects = [
   },
 ]
 
+function VideoPreview({ src }) {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {})
+        } else {
+          video.pause()
+        }
+      },
+      { threshold: 0.25 }
+    )
+
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <video
+      ref={videoRef}
+      muted
+      loop
+      playsInline
+      autoPlay
+      className="proj-demo-preview"
+    >
+      <source src={src} type="video/mp4" />
+    </video>
+  )
+}
+
 function DemoModal({ demo, onClose }) {
   if (!demo) return null
   return (
@@ -115,9 +151,7 @@ export default function Projects() {
               <div className="proj-demo-area" style={{ background: c.bg }}>
                 {project.demo?.type === 'video' && (
                   <div className="proj-demo-thumb" onClick={() => setActiveDemo(project.demo)}>
-                    <video muted loop playsInline preload="metadata" className="proj-demo-preview">
-                      <source src={project.demo.src} type="video/mp4" />
-                    </video>
+                    <VideoPreview src={project.demo.src} />
                     <div className="proj-play-btn">
                       <svg width="32" height="32" viewBox="0 0 32 32">
                         <circle cx="16" cy="16" r="15" fill="rgba(0,0,0,0.45)" stroke="white" strokeWidth="1.5"/>

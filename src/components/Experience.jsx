@@ -98,7 +98,7 @@ export default function Experience() {
     <section className="experience-section" id="experience">
       <div className="section-header scroll-reveal">
         <h2 className="section-title">Experience</h2>
-        <p className="section-subtitle">how I spent most of my college years (spoiler: not sleeping)</p>
+        <p className="section-subtitle">how I spent most of my college years (spoiler: exploring everything)</p>
       </div>
 
       <div className="experience-timeline">
