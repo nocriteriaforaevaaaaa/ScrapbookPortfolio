@@ -95,7 +95,7 @@ export default function Education() {
     <section className="education-section" id="education">
       <div className="section-header scroll-reveal">
         <h2 className="section-title">Education</h2>
-        <p className="section-subtitle">the classrooms that shaped me (and the ones I slept through)</p>
+        <p className="section-subtitle">the classrooms that shaped me </p>
       </div>
 
       <div className="edu-timeline">
