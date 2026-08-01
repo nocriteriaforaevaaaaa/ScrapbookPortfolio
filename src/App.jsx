@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
-import Achievements from './components/Achievements'
-import Skills from './components/Skills'
-import Education from './components/Education'
-import Interests from './components/Interests'
-import Contact from './components/Contact'
-import SparkleCounter from './components/SparkleCounter'
-import Footer from './components/Footer'
-import Decorations from './components/Decorations'
-import RetroDecorations from './components/RetroDecorations'
-import './App.css'
+import React, { useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Achievements from "./components/Achievements";
+import Skills from "./components/Skills";
+import Education from "./components/Education";
+import Interests from "./components/Interests";
+import Contact from "./components/Contact";
+import SparkleCounter from "./components/SparkleCounter";
+import Footer from "./components/Footer";
+import Decorations from "./components/Decorations";
+import RetroDecorations from "./components/RetroDecorations";
+import "./App.css";
 
 function App() {
   useEffect(() => {
@@ -21,19 +21,19 @@ function App() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in')
+            entry.target.classList.add("animate-in");
           }
-        })
+        });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    )
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
 
-    document.querySelectorAll('.scroll-reveal').forEach((el) => {
-      observer.observe(el)
-    })
+    document.querySelectorAll(".scroll-reveal").forEach((el) => {
+      observer.observe(el);
+    });
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="scrapbook-page">
@@ -52,7 +52,7 @@ function App() {
       <SparkleCounter />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
