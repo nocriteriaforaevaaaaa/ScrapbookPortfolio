@@ -8,7 +8,6 @@ const experiences = [
     location: "Pulchowk Campus, Nepal",
     desc: [
       "Leading the planning and execution of software-focused initiatives, including fellowships, hackathons, workshops, coding competitions, and outreach programs",
-      "Overseeing technical teams and volunteers while coordinating instructors, mentors, participants, and event logistics for software-related activities",
       "Managing the LOCUS Open Source Team, technical appointments, community engagement, and collaborations to foster learning and open-source contributions",
       "Driving software community growth through mentorship programs, developer events, and initiatives that promote programming, innovation, and technical skill development",
     ],
